@@ -228,6 +228,10 @@ NLP Query Engine project/
 MIT — free to use and modify.
 
 If you want, I can:
+
+https://github.com/user-attachments/assets/e0b3dcd3-d601-4bc2-b7bf-de8ec9b365e1
+
+
 - polish the frontend copy (UI labels/messages),
 - produce sample CSVs and example queries,
 - or add a short troubleshooting guide inside the app UI.
