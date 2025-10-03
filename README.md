@@ -2,6 +2,18 @@ https://github.com/user-attachments/assets/e0b3dcd3-d601-4bc2-b7bf-de8ec9b365e1
 
 Deployment in future its just my first prototype.
 
+# Concise list of things I tried and failed (project start → now)
+- Early CSV uploads: inconsistent delimiter/encoding handling caused corrupted tables.
+- Naive schema inference: mixed-type columns became TEXT only, losing numeric/date semantics.
+- SQL generation: initial rule-based templates produced invalid or unsafe SQL for complex queries (joins/aggregations).
+- SQL injection risk: no parameterization or whitelist/checks early on.
+- Frontend upload UX: silent failures and no progress/error feedback for large files.
+- CORS and port mismatch: frontend couldn't call backend in early runs due to missing CORS config.
+- Concurrency issues: SQLite busy/locked errors under concurrent uploads/queries.
+- Performance: importing large CSVs blocked the server process (no chunked ingestion/background worker).
+- Insufficient tests and logging: hard to reproduce intermittent errors.
+- Deployment attempts: naive deployment failed due to missing environment setup and port/service configuration.
+
 # NLP Query Engine
 
 A small, user-friendly app that lets you upload CSV files and query them using plain English. The frontend is built with React and the backend uses FastAPI + SQLite. The app converts natural-language questions to SQL, runs them against your uploaded data, and returns results instantly.
