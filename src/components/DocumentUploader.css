@@ -1,0 +1,276 @@
+.document-uploader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.uploader-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.uploader-header h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.uploader-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.upload-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-zone:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.upload-zone.drag-over {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+  transform: scale(1.02);
+}
+
+.upload-zone.uploading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.upload-prompt {
+  width: 100%;
+}
+
+.upload-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.upload-prompt h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.upload-prompt p {
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+}
+
+.upload-link {
+  color: #4CAF50;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.upload-hints {
+  margin-top: 16px;
+  opacity: 0.8;
+}
+
+.upload-hints p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.upload-progress {
+  width: 100%;
+}
+
+.upload-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.upload-success {
+  width: 100%;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.upload-success h4 {
+  margin: 0 0 16px 0;
+  color: #4CAF50;
+  font-size: 1.3rem;
+}
+
+.file-details {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.file-details p {
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.column-list {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.column-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.column-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.upload-new-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-new-btn:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.schema-preview {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.schema-preview h4 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+}
+
+.schema-table {
+  display: grid;
+  gap: 8px;
+}
+
+.schema-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.schema-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.column-name {
+  font-weight: 500;
+  color: #4CAF50;
+}
+
+.column-type {
+  opacity: 0.8;
+  font-family: 'Courier New', monospace;
+}
+
+.sample-values {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .document-uploader {
+    padding: 16px;
+  }
+  
+  .upload-zone {
+    padding: 30px 15px;
+    min-height: 150px;
+  }
+  
+  .schema-header,
+  .schema-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .schema-header span,
+  .schema-row span {
+    padding: 4px 0;
+  }
+  
+  .column-tags {
+    justify-content: center;
+  }
+}
