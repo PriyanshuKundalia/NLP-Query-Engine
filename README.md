@@ -1,3 +1,7 @@
+https://github.com/user-attachments/assets/e0b3dcd3-d601-4bc2-b7bf-de8ec9b365e1
+
+Deployment in future its just my first prototype.
+
 # NLP Query Engine
 
 A small, user-friendly app that lets you upload CSV files and query them using plain English. The frontend is built with React and the backend uses FastAPI + SQLite. The app converts natural-language questions to SQL, runs them against your uploaded data, and returns results instantly.
@@ -224,14 +228,5 @@ NLP Query Engine project/
 2. Create a branch (feature/your-change)
 3. Commit and open a pull request
 
-## License
-MIT — free to use and modify.
-
-If you want, I can:
-
-https://github.com/user-attachments/assets/e0b3dcd3-d601-4bc2-b7bf-de8ec9b365e1
 
 
-- polish the frontend copy (UI labels/messages),
-- produce sample CSVs and example queries,
-- or add a short troubleshooting guide inside the app UI.
