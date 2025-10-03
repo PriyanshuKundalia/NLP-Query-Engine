@@ -1,139 +1,233 @@
 # NLP Query Engine
 
-A React + FastAPI application that allows users to upload CSV files and query them using natural language.
+A small, user-friendly app that lets you upload CSV files and query them using plain English. The frontend is built with React and the backend uses FastAPI + SQLite. The app converts natural-language questions to SQL, runs them against your uploaded data, and returns results instantly.
 
-## Features
+## Key features
+- Upload CSV files (drag & drop)
+- Ask questions in plain English — the server generates SQL automatically
+- Instant results with formatted tables
+- Works with any CSV dataset
+- Export query results as CSV
+- Lightweight: SQLite for storage, Pandas for processing
 
-✅ **CSV File Upload**: Drag and drop CSV files to upload and analyze  
-✅ **Natural Language Queries**: Ask questions in plain English  
-✅ **Smart SQL Generation**: Automatically converts natural language to SQL  
-✅ **Real-time Results**: Instant query execution and results display  
-✅ **Multi-format Support**: Works with any CSV dataset  
+## Quick start
 
-## Quick Start
-
-### Prerequisites
+Prerequisites
 - Python 3.8+
 - Node.js 16+
+- (Windows) Git and a terminal like PowerShell or Windows Terminal
 
-### Installation
+Install and run
 
-1. **Clone the repository**
+1. Clone the repo
 ```bash
 git clone <your-repo-url>
 cd "NLP Query Engine project"
 ```
 
-2. **Setup Backend**
+2. Start the backend
 ```bash
 cd backend
 pip install -r requirements.txt
 python final_server.py
+# Backend runs at http://localhost:8000 by default
 ```
 
-3. **Setup Frontend**
+3. Start the frontend (new terminal)
 ```bash
-# In a new terminal
+cd src
 npm install
 npm start
+# Frontend runs at http://localhost:3000
 ```
 
-4. **Access the Application**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
+## How to use
 
-## Usage
+1. Upload a CSV
+   - Open the app, go to the "Upload" tab and drop your CSV file.
+   - The backend will create or update an SQLite table from the CSV.
 
-### 1. Upload Data
-- Go to the "Upload" tab
-- Drag and drop your CSV file
-- Wait for successful upload confirmation
+2. Ask questions
+   - Switch to the "Query" tab and type natural-language questions such as:
+     - "Show all records where price > 100"
+     - "Count orders by region"
+     - "What is the average sales amount per month?"
 
-### 2. Query Your Data
-- Switch to the "Query" tab
-- Type natural language questions like:
-  - "Show all records where price > 100"
-  - "Count how many items by category"
-  - "Find the average sales amount"
-  - "List all products with rating above 4"
+3. View and export results
+   - Results show in a table alongside the generated SQL.
+   - Export the displayed results as CSV if needed.
 
-### 3. View Results
-- Results appear instantly in a formatted table
-- See the generated SQL query
-- Export results as CSV if needed
+## Example queries
 
-## Example Queries
-
-For **Iris Dataset**:
+Iris dataset:
 - "Show all flowers where petal_width > 1"
 - "Count flowers by species"
-- "Find flowers with sepal_length > 6"
-- "Show only setosa flowers"
 
-For **Sales Dataset**:
-- "Show products with price > 50"
-- "Count orders by region"
-- "Find average revenue per month"
+Sales dataset:
 - "List top selling products"
+- "Find average revenue per month"
 
-## Project Structure
+## API (main endpoints)
+- GET /api/connections — check DB connection
+- GET /api/schema — list tables and schemas
+- POST /api/upload — upload CSV (multipart/form-data)
+- POST /api/query — run a natural-language query (returns SQL + rows)
 
+## Project structure
 ```
 NLP Query Engine project/
 ├── backend/
-│   ├── final_server.py          # Main FastAPI server
-│   ├── requirements.txt         # Python dependencies
-│   └── final_database.db        # SQLite database (auto-created)
+│   ├── final_server.py          # FastAPI server
+│   ├── requirements.txt
+│   └── final_database.db        # SQLite (auto-created)
 ├── src/
 │   ├── components/
-│   │   ├── DocumentUploader.js  # File upload component
-│   │   ├── QueryPanel.js        # Query interface
-│   │   ├── ResultsView.js       # Results display
-│   │   └── DatabaseConnector.js # Database connection
-│   ├── App.js                   # Main React app
-│   └── index.js                 # Entry point
-├── package.json                 # Frontend dependencies
-└── README.md                    # This file
+│   │   ├── DocumentUploader.js
+│   │   ├── QueryPanel.js
+│   │   ├── ResultsView.js
+│   │   └── DatabaseConnector.js
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
 ```
 
-## API Endpoints
+## Tips & notes
+- CSVs should include a header row with column names.
+- Large CSVs may take longer to process; consider sampling or increasing memory.
+- The SQL generation tries to be safe, but review queries before running on sensitive data.
 
-- `GET /api/connections` - Check database connection
-- `GET /api/schema` - Get table schema information
-- `POST /api/upload` - Upload CSV file
-- `POST /api/query` - Execute natural language query
-
-## Technologies Used
-
-**Frontend:**
-- React 18
-- Modern CSS with animations
-- Drag & drop file upload
-
-**Backend:**
-- FastAPI (Python web framework)
-- Pandas (Data processing)
-- SQLite (Database)
-- Uvicorn (ASGI server)
-
-## Deployment
-
-The application is ready for deployment on platforms like:
-- Vercel (Frontend)
-- Railway/Heroku (Backend)
-- Or any VPS with Python and Node.js support
+## Troubleshooting
+- Backend not starting: ensure Python deps are installed and port 8000 is free.
+- Frontend not loading: run `npm install` inside `src`, then `npm start`.
+- Upload errors: check CSV encoding (UTF-8 recommended) and header validity.
 
 ## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+1. Fork the repo
+2. Create a branch (feature/your-change)
+3. Commit and open a pull request
 
 ## License
+MIT — free to use and modify.
 
-MIT License - feel free to use this project for learning and development.
+If you want, I can:
+- polish the frontend copy (UI labels/messages),
+- produce sample CSVs and example queries,
+- or add a short troubleshooting guide inside the app UI.
+```// filepath: c:\Users\priya\OneDrive\Desktop\NLP Query Engine project\README.md
+# NLP Query Engine
 
----
+A small, user-friendly app that lets you upload CSV files and query them using plain English. The frontend is built with React and the backend uses FastAPI + SQLite. The app converts natural-language questions to SQL, runs them against your uploaded data, and returns results instantly.
 
-**Made with ❤️ for natural language data querying**
+## Key features
+- Upload CSV files (drag & drop)
+- Ask questions in plain English — the server generates SQL automatically
+- Instant results with formatted tables
+- Works with any CSV dataset
+- Export query results as CSV
+- Lightweight: SQLite for storage, Pandas for processing
+
+## Quick start
+
+Prerequisites
+- Python 3.8+
+- Node.js 16+
+- (Windows) Git and a terminal like PowerShell or Windows Terminal
+
+Install and run
+
+1. Clone the repo
+```bash
+git clone <your-repo-url>
+cd "NLP Query Engine project"
+```
+
+2. Start the backend
+```bash
+cd backend
+pip install -r requirements.txt
+python final_server.py
+# Backend runs at http://localhost:8000 by default
+```
+
+3. Start the frontend (new terminal)
+```bash
+cd src
+npm install
+npm start
+# Frontend runs at http://localhost:3000
+```
+
+## How to use
+
+1. Upload a CSV
+   - Open the app, go to the "Upload" tab and drop your CSV file.
+   - The backend will create or update an SQLite table from the CSV.
+
+2. Ask questions
+   - Switch to the "Query" tab and type natural-language questions such as:
+     - "Show all records where price > 100"
+     - "Count orders by region"
+     - "What is the average sales amount per month?"
+
+3. View and export results
+   - Results show in a table alongside the generated SQL.
+   - Export the displayed results as CSV if needed.
+
+## Example queries
+
+Iris dataset:
+- "Show all flowers where petal_width > 1"
+- "Count flowers by species"
+
+Sales dataset:
+- "List top selling products"
+- "Find average revenue per month"
+
+## API (main endpoints)
+- GET /api/connections — check DB connection
+- GET /api/schema — list tables and schemas
+- POST /api/upload — upload CSV (multipart/form-data)
+- POST /api/query — run a natural-language query (returns SQL + rows)
+
+## Project structure
+```
+NLP Query Engine project/
+├── backend/
+│   ├── final_server.py          # FastAPI server
+│   ├── requirements.txt
+│   └── final_database.db        # SQLite (auto-created)
+├── src/
+│   ├── components/
+│   │   ├── DocumentUploader.js
+│   │   ├── QueryPanel.js
+│   │   ├── ResultsView.js
+│   │   └── DatabaseConnector.js
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
+
+## Tips & notes
+- CSVs should include a header row with column names.
+- Large CSVs may take longer to process; consider sampling or increasing memory.
+- The SQL generation tries to be safe, but review queries before running on sensitive data.
+
+## Troubleshooting
+- Backend not starting: ensure Python deps are installed and port 8000 is free.
+- Frontend not loading: run `npm install` inside `src`, then `npm start`.
+- Upload errors: check CSV encoding (UTF-8 recommended) and header validity.
+
+## Contributing
+1. Fork the repo
+2. Create a branch (feature/your-change)
+3. Commit and open a pull request
+
+## License
+MIT — free to use and modify.
+
+If you want, I can:
+- polish the frontend copy (UI labels/messages),
+- produce sample CSVs and example queries,
+- or add a short troubleshooting guide inside the app UI.
