@@ -37,7 +37,7 @@ Install and run
 
 1. Clone the repo
 ```bash
-git clone <your-repo-url>
+git clone <(https://github.com/PriyanshuKundalia/NLP-Query-Engine)>
 cd "NLP Query Engine project"
 ```
 
