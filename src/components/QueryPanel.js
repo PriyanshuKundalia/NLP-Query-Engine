@@ -215,7 +215,8 @@ const QueryPanel = ({ onQueryResults = () => {}, connectionInfo = null }) => {
 
     try {
       // Choose endpoint based on AI mode
-      const endpoint = aiMode ? 'http://localhost:8000/api/ai-query' : 'http://localhost:8000/api/query';
+  // Use AI endpoint when AI mode is enabled, otherwise use rule-based endpoint
+  const endpoint = aiMode ? 'http://localhost:8000/api/ai-query' : 'http://localhost:8000/api/query';
       const systemType = aiMode ? 'FREE AI-Powered' : 'Pattern-Based';
       
       console.log('Executing query:', query.trim());
@@ -585,7 +586,7 @@ const QueryPanel = ({ onQueryResults = () => {}, connectionInfo = null }) => {
                     lineHeight: 1.4
                   }}>
                     {aiMode 
-                      ? 'Using cutting-edge Hugging Face models for superior query understanding and flexible natural language processing'
+                      ? 'Using Groq AI (fast & free) for superior query understanding and flexible natural language processing'
                       : 'Switch to AI mode for intelligent query interpretation, semantic understanding, and support for any phrasing'
                     }
                   </div>
